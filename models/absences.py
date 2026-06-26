@@ -12,8 +12,7 @@ class AbsenceModel(ManageBD):
             INSERT INTO absences (student_id, date, status)
             VALUES (?, ?, ?)
             """,
-            (student_id, date, status)
-        )
+            (student_id, date, status))
         self.conexion.commit()
 
     
@@ -29,8 +28,7 @@ class AbsenceModel(ManageBD):
             SET student_id = ?, date = ?, status = ?
             WHERE id = ?
             """,
-            (student_id, date, status, id_absence)
-        )
+            (student_id, date, status, id_absence))
         self.conexion.commit()
 
     
@@ -40,8 +38,7 @@ class AbsenceModel(ManageBD):
             DELETE FROM absences
             WHERE id = ?
             """,
-            (id_absence,)
-        )
+            (id_absence,))
         self.conexion.commit()
 
     
@@ -51,21 +48,13 @@ class AbsenceModel(ManageBD):
             SELECT * FROM absences
             WHERE id = ?
             """,
-            (id_absence,)
-        )
+            (id_absence,))
         return self.curseur.fetchall()
 
-    
-    def rechercher_par_etudiant(self, student_id):
-        self.curseur.execute(
-            """
-            SELECT * FROM absences
-            WHERE student_id = ?
-            """,
-            (student_id,)
-        )
-        return self.curseur.fetchall()
-
+    def supprimer_toutes_les_notes(self):
+        """Supprime absolument TOUTES les notes de la table absences"""
+        self.curseur.execute("DELETE FROM absences")
+        self.conexion.commit()
    
     def close(self):
         self.conexion.close()

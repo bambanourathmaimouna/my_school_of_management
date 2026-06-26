@@ -12,47 +12,50 @@ class EtudiantModel(ManageBD):
             INSERT INTO students (nom, prenom, age, matricule, classe)
             VALUES (?, ?, ?, ?, ?)
             """, 
-            (nom, prenom, age, matricule, classe)
-        )
+            (nom, prenom, age, matricule, classe))
         self.conexion.commit()
 
 
-    def Lire(self):
-        self.curseur.execute("SELECT * FROM students")
+    def Lire(self, classe):
+        self.curseur.execute(
+        "SELECT * FROM students WHERE classe = ?",
+        (classe,)
+    )
         return self.curseur.fetchall()
 
 
     def Modifier(self, id_etudiant, nom, prenom, age, matricule, classe):
-
         self.curseur.execute("""
         UPDATE students
         SET 
         nom=?,prenom=?,age=?,matricule=?,classe=?
         WHERE id=?
         """, (nom, prenom, age, matricule, classe, id_etudiant))
-
         self.conexion.commit()
-
-        print("Modification effectuée avec succès.")
 
 
 
     def supprimer(self,id_etudiants):
         self.curseur.execute(
             "DELETE FROM students WHERE id = ?", 
-            (id_etudiants,)
-        )
+            (id_etudiants,))
         self.conexion.commit()
-        print(f"L'étudiant avec l'id {id_etudiants} a été supprimé.")
 
 
 
     def rechercher(self, matricule):
         self.curseur.execute(
         "SELECT * FROM students WHERE matricule = ?",
-        (matricule,)
-    )
+        (matricule,))
         return self.curseur.fetchall()
+
+
+
+    def supprimer_toutes_les_notes(self):
+        """Supprime absolument TOUTES les notes de la table students"""
+        self.curseur.execute("DELETE FROM students")
+        self.conexion.commit()
+
 
     def close(self):
         self.conexion.close()

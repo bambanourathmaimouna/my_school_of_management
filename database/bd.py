@@ -53,6 +53,7 @@ class ManageBD:
                 nom TEXT NOT NULL,
                 prenom TEXT NOT NULL,
                 subjects_id INTEGER ,
+                classe TEXT NOT NULL,
                 FOREIGN KEY (subjects_id) REFERENCES subjects (id)
              )
             """ 
@@ -69,6 +70,8 @@ class ManageBD:
         FOREIGN KEY (teacher_id) REFERENCES teachers(id)
         )
     """)
+        self.conexion.commit()
+
         
 
     def grades(self):
@@ -79,7 +82,7 @@ class ManageBD:
         subject_id INTEGER NOT NULL,
         note REAL NOT NULL,
     
-        FOREIGN KEY(student_id) REFERENCES etudiants(id),
+        FOREIGN KEY(student_id) REFERENCES students(id),
         FOREIGN KEY(subject_id) REFERENCES subjects(id)
         )
     """)
@@ -94,7 +97,7 @@ class ManageBD:
         date TEXT NOT NULL,
         status TEXT NOT NULL,
 
-        FOREIGN KEY(student_id) REFERENCES etudiants(id)
+        FOREIGN KEY(student_id) REFERENCES students(id)
         )
     """)
         self.conexion.commit()
@@ -102,6 +105,6 @@ class ManageBD:
 
     def suprimer_table(self) :
         self.curseur.execute("""
-            DROP TABLE teachers
+            CREATE IF NOT EXISTS TABLE teachers
             """)    
 

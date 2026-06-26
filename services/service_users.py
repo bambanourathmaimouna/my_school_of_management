@@ -20,19 +20,22 @@ class Gestion_utisateurs:
 
     def Ajouter_etudiant(self):
         print("\n--- AJOUTER UN ÉTUDIANT ---")
+
         nom = input("Veuillez renseigner le nom : ")
         prenom = input("Veuillez renseigner le prénom : ")
         age = int(input("Merci d'indiquer l'âge : "))
-        matricule = int( input("Saisissez le matricule : "))
+        matricule = input("Saisissez le matricule : ")
         classe = input("Merci d'indiquer la classe : ")
-
-        self.student.Ajouter(nom, prenom, age, matricule, classe)
+        password = input("Définir un mot de passe : ")
         print("Étudiant ajouté avec succès !")
+        self.student.Ajouter(nom,prenom,age,matricule,classe)
+        self.users.Ajouter(nom,prenom,password,"étudiant")
+       
 
 
-    def Lister_etudiant(self):
+    def Lister_etudiant(self,classe):
         print("\n--- LISTE DES ÉTUDIANTS ---")
-        resultat = self.student.Lire() 
+        resultat = self.student.Lire(classe) 
         if resultat:
             for i in resultat:
                 print(i)
@@ -49,19 +52,20 @@ class Gestion_utisateurs:
         new_matricule =int(input("Saisissez le nouveau matricule : "))
         new_classe = input("Merci d'indiquer la nouvelle classe : ")
         self.student.Modifier(id_etudiant, new_nom, new_prenom, new_age, new_matricule, new_classe)
+        print("Modification enregistrée avec succès!")
 
         
     def Supprimer_etudiant(self):
         print("\n--- SUPPRIMER UN ÉTUDIANT ---")
         id_etudiant = input("Veuillez entrer l'ID de l'étudiant à supprimer : ")
         self.student.supprimer(id_etudiant)
+        print(f"L'étudiant ayant l'id {id_etudiant} a été supprimer!")
 
 
     def Rechercher_etudiant(self):
         print("\n--- RECHERCHER UN ÉTUDIANT ---")
         matricule = input("Entrez le matricule de l'élève que vous cherchez : ")
         resultat = self.student.rechercher(matricule)
-
         if resultat:
            for etudiant in resultat:
             print(etudiant)
@@ -72,14 +76,19 @@ class Gestion_utisateurs:
     # GESTION DES PROFESSEURS
     # ==========================================
 
-    def Ajouter_proffesseur(self):
-        print("\n--- AJOUTER UN PROFESSEUR ---")
-        nom = input("Veuillez renseigner le nom du professeur : ")
-        prenom = input("Veuillez renseigner le prénom du professeur : ")
-        subjects_id = int(input("Merci de renseigner l'id de  la matière : "))
-        
-        self.teachers.Ajouter(nom, prenom, subjects_id)
-        print("Professeur ajouté avec succès !")
+    def Ajouter_professeur(self):
+
+       print("\n--- AJOUTER UN PROFESSEUR ---")
+       nom = input("Veillez entrer le nom du professeur : ")
+       prenom = input("Veillez entrer le prénom du professeur : ")
+       classe = input("Entrez la classe SVP : ")
+       subject_id = input("Entrer l'id de la matière : ")
+       password = input("Mot de passe : ")
+       
+       self.teachers.Ajouter(nom,prenom,classe,subject_id)
+       self.users.Ajouter(nom,prenom,password,"professeur")
+       print(f"\nLe professeur {nom} {prenom} a été ajouté avec succès.")
+
 
 
     def Lire_proffesseur(self):
@@ -92,24 +101,18 @@ class Gestion_utisateurs:
             print("Aucun étudiant trouvé.")
 
 
-
     def Modifier_proffesseur(self):
         print("\n--- MODIFIER UN PROFESSEUR ---")
-
         id_prof = input("Veuillez entrer l'ID du professeur : ")
         nom = input("Veuillez renseigner le nouveau nom : ")
         prenom = input("Veuillez renseigner le nouveau prénom : ")
-        matiere = input("Veuillez entrer la nouvelle matière : ")
-
+        matiere = input("Veuillez entrer l'id de la nouvelle matière : ")
         self.teachers.Modifier(id_prof, nom, prenom, matiere)
-
         print("Modification effectuée avec succès !")
-
 
 
     def Supprimer_proffesseur(self):
         print("\n--- SUPPRIMER UN PROFESSEUR ---")
-
         id_prof = input("Veuillez entrer l'ID du professeur à supprimer : ")
         self.teachers.supprimer(id_prof)
         print("Professeur supprimé avec succès !")
@@ -126,8 +129,6 @@ class Gestion_utisateurs:
            print("Aucun proffesseur trouvé.")
 
 
-
-
     # ==========================================
     # GESTION DES UTILISATEURS
     # ==========================================
@@ -138,10 +139,8 @@ class Gestion_utisateurs:
         prenom = input("Veuillez renseigner le prénom de l'utilisateur : ")
         role = input("Veuillez renseigner le rôle (admin/professeur/étudiant) : ")
         password = input("Merci de renseigner le mot de passe : ")
-        
-        self.users.Ajouter(nom, prenom, role, password)
+        self.users.Ajouter(nom, prenom, password, role)
         print("Utilisateur ajouté avec succès !")
-
 
 
     def Lire_utilisateur(self):
@@ -164,19 +163,20 @@ class Gestion_utisateurs:
         print("\n--- SUPPRIMER UN UTILISATEUR ---")
         id_user = input("ID de l'utilisateur à supprimer : ")
         self.users.supprimer(id_user)
+        print("l'utilisateur ayant {id_user} a été supprimer!")
+
 
     def Rechercher_utilisateur(self):
         print("\n--- RECHERCHER UN UTILISATEUR ---")
-        id_users = input("Entrez l'ID de l'utilisateur : ")
+        id_users = int(input("Entrez l'ID de l'utilisateur : "))
         resultat = self.users.rechercher(id_users)
-        print(resultat)
-
-
-
+        if resultat:
+           print(resultat)
+        else:
+            print("Utilisateur introuvable.")
     # ==========================================
     #        GESTION DES MATIÈRES
     # ==========================================
-
 
     def Ajouter_matiere(self):
         print("\n--- AJOUTER UNE MATIÈRE ---")
@@ -227,116 +227,4 @@ class Gestion_utisateurs:
         self.subjects.affecter(id_teacher, id_matiere)
         print("Matière affectée avec succès !")
 
-
-    # ==========================================
-    #         GESTION DES NOTES
-    # ==========================================
-
-    def Ajouter_note(self):
-        print("\n--- AJOUTER UNE NOTE ---")
-        student_id = input("Entrez l'ID de l'étudiant : ")
-        subject_id = input("Entrez l'ID de la matière : ")
-        note = float(input("Entrez la note : "))
-        self.grades.Ajouter(student_id, subject_id, note)
-        print("Note ajoutée avec succès !")
-
-
-    def Lister_note(self):
-        print("\n--- LISTE DES NOTES ---")
-        resultat = self.grades.Lire()
-        if resultat:
-            for note in resultat:
-               print(note)
-        else:
-           print("Aucune note trouvée.")
-
-
-    def Modifier_note(self):
-        print("\n--- MODIFIER UNE NOTE ---")
-        id_note = input("Entrez l'ID de la note : ")
-        student_id = input("Entrez l'ID de l'étudiant : ")
-        subject_id = input("Entrez l'ID de la matière : ")
-        note = float(input("Entrez la nouvelle note : "))
-        self.grades.Modifier(id_note,student_id,subject_id,note)
-        print("Note modifiée avec succès !")
-  
-
-    def Supprimer_note(self):
-        print("\n--- SUPPRIMER UNE NOTE ---")
-        id_note = input("Entrez l'ID de la note à supprimer : ")
-        self.grades.supprimer(id_note)
-        print("Note supprimée avec succès !")
-
-
-    def Rechercher_note(self):
-        print("\n--- RECHERCHER UNE NOTE ---")
-        id_note = input("Entrez l'ID de la note : ")
-        resultat = self.grades.rechercher(id_note)
-        if resultat:
-           for note in resultat:
-            print(note)
-        else:
-            print("Aucune note trouvée.")
-
-
-
-
-    # ==========================================
-    # GESTION DES ABSENCES
-    # ==========================================
-
-    def Ajouter_absence(self):
-        print("\n--- AJOUTER UNE ABSENCE ---")
-        student_id = input("Entrez l'ID de l'étudiant : ")
-        date = int(input("Entrez la date (jour-mois-année) : "))
-        status = input("Statut (Absent / Présent / Retard) : ")
-        self.absences.Ajouter(student_id, date, status)
-        print("Absence ajoutée avec succès !")
-
-
-    def Lister_absence(self):
-        print("\n--- LISTE DES ABSENCES ---")
-        resultat = self.absences.Lire()
-
-        if resultat:
-           for absence in resultat:
-            print(absence)
-        else:
-           print("Aucune absence trouvée.")
-
-
-    def Modifier_absence(self):
-       print("\n--- MODIFIER UNE ABSENCE ---")
-       id_absence = input("ID de l'absence : ")
-       student_id = input("ID étudiant : ")
-       date = input("Nouvelle date (jour-mois-année) : ")
-       status = input("Nouveau statut : ")
-       self.absences.Modifier(id_absence, student_id, date, status)
-       print("Absence modifiée avec succès !")
-
-
-    def Supprimer_absence(self):
-       print("\n--- SUPPRIMER UNE ABSENCE ---")
-       id_absence = input("ID de l'absence à supprimer : ")
-       self.absences.supprimer(id_absence)
-       print("Absence supprimée avec succès !")
-
-
-    def Rechercher_absence(self):
-       print("\n--- RECHERCHER UNE ABSENCE ---")
-       choix = input("Rechercher par (1 = ID, 2 = Étudiant) : ")
-       if choix == "1":
-           id_absence = input("ID de l'absence : ")
-           resultat = self.absences.rechercher(id_absence)
-       elif choix == "2":
-           student_id = input("ID étudiant : ")
-           resultat = self.absences.rechercher_par_etudiant(student_id)
-       else:
-        print("Option invalide.")
-        return
-       if resultat:
-        for absence in resultat:
-            print(absence)
-       else:
-        print("Aucune absence trouvée.")
-        
+   

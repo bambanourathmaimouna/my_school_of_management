@@ -8,7 +8,6 @@ import sys
 
 
 def gestions_users():
-    # Instanciation de la classe (ajout des parenthèses)
     users = Gestion_utisateurs()
     
     while True:
@@ -45,7 +44,7 @@ def gestions_users():
             print(GESTION_DES_PROFFESSEURS)
             choix_proffesseur = input("Choisissez une action : ")
             if choix_proffesseur == "1":
-                users.Ajouter_proffesseur()
+                users.Ajouter_professeur()
                 retour_ou_quitter()
             elif choix_proffesseur == "2":
                 users.Lire_proffesseur()
@@ -167,3 +166,8 @@ def retour_ou_quitter():
     if choix == "0":
         print("Au revoir !")
         sys.exit()
+
+
+if __name__ == "__main__":
+    gestions_users()
+    retour_ou_quitter()

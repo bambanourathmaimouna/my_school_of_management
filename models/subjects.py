@@ -7,8 +7,7 @@ class SubjectModel(ManageBD):
     def Ajouter(self, matiere):
         self.curseur.execute(
             "INSERT INTO subjects (matiere) VALUES (?)",
-            (matiere,)
-        )
+            (matiere,))
         self.conexion.commit()
 
     def Lire(self):
@@ -22,8 +21,7 @@ class SubjectModel(ManageBD):
             SET matiere = ?
             WHERE id = ?
             """,
-            (matiere, id_matiere)
-        )
+            (matiere, id_matiere))
         self.conexion.commit()
 
     def supprimer(self, id_matiere):
@@ -32,8 +30,7 @@ class SubjectModel(ManageBD):
             DELETE FROM subjects
             WHERE id = ?
             """,
-            (id_matiere,)
-        )
+            (id_matiere,))
         self.conexion.commit()
 
     def rechercher(self, id_matiere):
@@ -49,6 +46,11 @@ class SubjectModel(ManageBD):
             SET teacher_id = ?
             WHERE id = ?
             """,
-            (teacher_id, subject_id)
-        )
+            (teacher_id, subject_id))
+        self.conexion.commit()
+
+
+    def supprimer_toutes_les_notes(self):
+        """Supprime absolument TOUTES les notes de la table subjects"""
+        self.curseur.execute("DELETE FROM subjects")
         self.conexion.commit()

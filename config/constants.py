@@ -27,8 +27,7 @@ OPTION_PRINCIPALE = """
 [2] Gestion des Professeurs
 [3] Gestion des Utilisateurs
 [4] Gestion des Matières
-[5] Gestion des Notes
-[6] Gestion des Absences 
+
 
 [0] Quitter
 
@@ -118,4 +117,39 @@ GESTION_DES_ABSENCES = """
 5. Rechercher une absence
 
 """
+
+ESPACE_PROFESSEUR = """
+
+╔════════════════════════════════════╗
+║        ESPACE PROFESSEUR           ║
+╚════════════════════════════════════╝
+
+[1] Ajouter une note
+[2] Modifier une note
+[3] Lister les notes
+[4] Lister mes étudiants
+[5] Rechercher un etudiant
+[6] Enregistrer une absence
+[7] lister une absence
+[8] supprimer_notes_etudiant
+
+[0] Déconnexion
+
+"""
+
+
+ESPACE_ETUDIANT = """
+
+╔════════════════════════════════════╗
+║         ESPACE ÉTUDIANT            ║
+╚════════════════════════════════════╝
+
+[1] Consulter mes notes
+[2] Voir ma moyenne générale
+[3] Consulter mes absences
+
+[0] Déconnexion
+
+"""
+
 
