@@ -26,8 +26,7 @@ class gradeModel(ManageBD):
             SELECT note FROM grades 
             WHERE student_id = ?
             """, 
-            (int(student_id),)  # Le tuple (id,) et la conversion en int évitent les bugs
-        )
+            (int(student_id),))
         return self.curseur.fetchall()
 
     def moyenne_par_etudiant(self, student_id):

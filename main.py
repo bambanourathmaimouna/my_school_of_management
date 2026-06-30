@@ -3,6 +3,7 @@ from utils.util_user import gestions_users
 from utils.utils_teacher import gestion_teacher
 from utils.util_student import gestion_student
 from utils.logger import logging
+from database.bd import ManageBD
 from models.users import userModel
 def main():
 
@@ -24,7 +25,10 @@ def main():
     else:
         print("Rôle non reconnu")
 
-  
+#   vr=ManageBD()
+#   vr.users()
+# print(f"Erreur lors de la suppression de la table :")
+
 if __name__ == "__main__":
     logging.info("DEMARAGE DE L'APPLICATION")
     main()

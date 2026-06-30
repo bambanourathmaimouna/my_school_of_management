@@ -14,18 +14,19 @@ def option_user():
 
         if choix == '1':
 
-            nom = input("Veuillez entrer votre nom : ")
+            user_name = input("Veuillez entrer votre user_name : ")
             password = input("Veuillez entrer votre mot de passe : ")
 
             liaison = userModel()
 
-            compte = liaison.verification(nom, password)
+            compte = liaison.verification(user_name, password)
             liaison.close()
 
             if compte:
-
-                nom_users = compte[1]
-                role_users = compte[3]
+                # Attention aux indices : selon votre base de données, 
+                # vérifiez si nom et rôle sont bien aux positions 4 et 5 de votre tuple.
+                nom_users = compte[4]
+                role_users = compte[5]
 
                 print(f"\nBienvenue sur votre espace {nom_users} ({role_users})")
                 
@@ -35,12 +36,11 @@ def option_user():
                 return compte
 
             else:
-
-                print("\n Nom ou mot de passe incorrect.")
+                print("\nNom ou mot de passe incorrect.")
                 print("Veuillez réessayer.\n")
                 
-                # Log de l'échec de connexion
-                logging.warning(f"Tentative de connexion échouée pour le nom d'utilisateur : '{nom}'")
+                # CORRECTION : On utilise 'user_name' ici car 'nom_users' n'existe pas en cas d'échec
+                logging.warning(f"Tentative de connexion échouée pour le nom d'utilisateur : '{user_name}'")
 
         elif choix == '0':
 
@@ -51,6 +51,6 @@ def option_user():
 
         else:
 
-            print(" Option invalide.\n")
+            print("Option invalide.\n")
             # Log du choix incorrect
             logging.warning(f"Option invalide saisie dans le menu de connexion : '{choix}'")

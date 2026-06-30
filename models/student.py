@@ -16,13 +16,10 @@ class EtudiantModel(ManageBD):
         self.conexion.commit()
 
 
-    def Lire(self, classe):
-        self.curseur.execute(
-        "SELECT * FROM students WHERE classe = ?",
-        (classe,)
-    )
+    def Lire(self):
+        self.curseur.execute("SELECT * FROM students")
         return self.curseur.fetchall()
-
+    
 
     def Modifier(self, id_etudiant, nom, prenom, age, matricule, classe):
         self.curseur.execute("""
@@ -51,11 +48,19 @@ class EtudiantModel(ManageBD):
 
 
 
-    def supprimer_toutes_les_notes(self):
-        """Supprime absolument TOUTES les notes de la table students"""
-        self.curseur.execute("DELETE FROM students")
+    def existe(self, id_etudiant):
+        self.curseur.execute(
+        "SELECT 1 FROM students WHERE id = ?",
+        (id_etudiant,))
+        return self.curseur.fetchall() is not None
         self.conexion.commit()
 
+
+
+
+
+    def ajouter_colonne(self):
+        self.curseur.execute("ALTER TABLE students ADD COLUMN user_id INTEGER;")
 
     def close(self):
         self.conexion.close()

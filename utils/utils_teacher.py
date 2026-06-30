@@ -29,32 +29,24 @@ def gestion_teacher():
         
         elif choix == "4":
             teacher.afficher_etudiants()
-            for etudiant in teacher.afficher_etudiants:
-                print(etudiant)
             retour_ou_quitter()
 
-        elif choix == "5":
-            etudiant = teacher.student.rechercher()
-        
-        
 
+        elif choix == "5":
+            teacher.rechercher_etudiant()
+            retour_ou_quitter()
+        
+    
         elif choix == "6":
             teacher.ajouter_absence()
             retour_ou_quitter()
 
         elif choix == "7":
-            for absence in teacher.absences.Lire():
-                print(absence)
+            teacher.afficher_absences()
             retour_ou_quitter()
 
         elif choix == "8":
             teacher.supprimer_notes_etudiant()
-            
-            liste_eleves = teacher.afficher_etudiants()
-            if liste_eleves:
-                for etudiant in liste_eleves:
-                    print(etudiant)
-                    
             retour_ou_quitter()
     
         

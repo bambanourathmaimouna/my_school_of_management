@@ -51,10 +51,7 @@ class AbsenceModel(ManageBD):
             (id_absence,))
         return self.curseur.fetchall()
 
-    def supprimer_toutes_les_notes(self):
-        """Supprime absolument TOUTES les notes de la table absences"""
-        self.curseur.execute("DELETE FROM absences")
-        self.conexion.commit()
+
    
     def close(self):
         self.conexion.close()

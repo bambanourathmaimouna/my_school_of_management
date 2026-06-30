@@ -13,27 +13,27 @@ class Gestion_student:
     # ==========================
     # CONSULTER MES NOTES
     # ==========================
-    def consulter_mes_notes(self, id_etudiant):
-        notes = self.grades.lire_par_etudiant(int(id_etudiant))
+    def consulter_mes_notes(self, student_id):
         
-        # On enregistre l'action dans le fichier log
-        logging.info(f"L'étudiant ID {id_etudiant} a consulté ses notes.")
-        
+        print("DEBUG ID :", student_id)
+
+        notes = self.grades.lire_par_etudiant(int(student_id))
+
+        print("DEBUG NOTES RAW :", notes)
+
         print("\n--- MES NOTES ---")
         if notes:
             for note in notes:
-                print(f"- Note : {note[0]}/20")
+                print(f"ID_MATIÈRE : {note[2]}, Note : {note[3]}/20")
         else:
-            print("Aucune note disponible pour cet étudiant.")
-        
+            print("Aucune note disponible !.")
+            
     # ==========================
     # VOIR MA MOYENNE
     # ==========================
-    def voir_ma_moyenne(self, id_etudiant):
-        moyenne = self.grades.moyenne_par_etudiant(int(id_etudiant))
-        
-        # On log l'action
-        logging.info(f"L'étudiant ID {id_etudiant} a consulté sa moyenne générale.")
+    def voir_ma_moyenne(self, student_id):
+        moyenne = self.grades.moyenne_par_etudiant(int(student_id))
+        logging.info(f"L'étudiant ID {student_id} a consulté sa moyenne générale.")
         
         print("\n--- MA MOYENNE GÉNÉRALE ---")
         if moyenne and moyenne[0] is not None:
@@ -44,11 +44,9 @@ class Gestion_student:
     # ==========================
     # CONSULTER MES ABSENCES
     # ==========================
-    def consulter_mes_absences(self, id_etudiant):
-        absences = self.absences.lire_par_etudiant(int(id_etudiant))
-        
-        # On log l'action
-        logging.info(f"L'étudiant ID {id_etudiant} a consulté ses absences.")
+    def consulter_mes_absences(self, student_id):
+        absences = self.absences.lire_par_etudiant(int(student_id))
+        logging.info(f"L'étudiant ID {student_id} a consulté ses absences.")
         
         print("\n--- MES ABSENCES ---")
         if absences:
@@ -61,8 +59,6 @@ class Gestion_student:
     # CONSULTER MES MATIÈRES
     # ==========================
     def consulter_mes_matieres(self):
-        # Ici on ne connaît pas l'ID de l'étudiant dans les paramètres de la fonction, 
-        # on écrit donc un log général
         logging.info("Consultation de la liste des matières globales.")
         
         print("\n--- MES MATIÈRES ---")

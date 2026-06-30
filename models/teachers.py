@@ -9,9 +9,9 @@ class teacherModel(ManageBD):
 
     def Ajouter(self, nom,prenom,classe,subjects_id):
        self.curseur.execute("""
-    INSERT INTO teachers(nom, prenom, classe, subjects_id)
-    VALUES (?, ?, ?, ?)
-    """, (nom, prenom, classe, subjects_id))
+        INSERT INTO teachers(nom, prenom, classe, subjects_id)
+        VALUES (?, ?, ?, ?)
+        """, (nom, prenom, classe, subjects_id))
        self.conexion.commit()
        
 
@@ -41,10 +41,11 @@ class teacherModel(ManageBD):
         self.conexion.commit()
         
 
-    def rechercher_par_nom(self, nom):
+    def rechercher(self, id_prof):
         self.curseur.execute(
-        "SELECT * FROM teachers WHERE nom = ?",
-        (nom,))
+        "SELECT * FROM teachers WHERE id = ?",
+        (id_prof,)
+    )
         return self.curseur.fetchone()
     
 
