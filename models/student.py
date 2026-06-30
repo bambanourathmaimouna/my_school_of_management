@@ -6,13 +6,13 @@ class EtudiantModel(ManageBD):
 
 
 
-    def Ajouter(self, nom, prenom, age, matricule, classe):
+    def Ajouter(self, nom, prenom, age, matricule, classe, user_id):
         self.curseur.execute(
             """
-            INSERT INTO students (nom, prenom, age, matricule, classe)
-            VALUES (?, ?, ?, ?, ?)
+            INSERT INTO students (nom, prenom, age, matricule, classe, user_id)
+            VALUES (?, ?, ?, ?, ?, ?)
             """, 
-            (nom, prenom, age, matricule, classe))
+            (nom, prenom, age, matricule, classe, user_id))
         self.conexion.commit()
 
 
@@ -53,9 +53,12 @@ class EtudiantModel(ManageBD):
         "SELECT 1 FROM students WHERE id = ?",
         (id_etudiant,))
         return self.curseur.fetchall() is not None
-        self.conexion.commit()
 
-
+    def get_student_id_from_user_id(self, user_id):
+        self.curseur.execute(
+        "SELECT id FROM students WHERE user_id = ?",
+        (user_id,))
+        return self.curseur.fetchone()
 
 
 

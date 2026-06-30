@@ -28,11 +28,11 @@ class Gestion_utisateurs:
         classe = input("Merci d'indiquer le niveau de l'étudiant : ")
       
         user_name = input("Définir un nom d'utilisateur (user_name) pour l'étudiant : ")
-        password = input("Définir un mot de passe pour l'étudiant : ")
+        password = input("Définir un mot de passe pour l'étudiant : ")  
       
-        self.student.Ajouter(nom, prenom, age, matricule, classe)
+        user_id  = self.users.Ajouter(nom, prenom, "étudiant", user_name, password)
+        self.student.Ajouter(nom, prenom, age, matricule, classe, user_id)
         
-        self.users.Ajouter(nom, prenom, user_name, password, "étudiant")
         
 
         print(f"\nL'étudiant {nom} {prenom} a été ajouté avec succès !")
@@ -79,6 +79,9 @@ class Gestion_utisateurs:
             print(f"ID : {etudiant[0]}, NOM : {etudiant[1]}, PRÉNOM : {etudiant[2]}, AGE : {etudiant[3]}, MATRICULE : {etudiant[4]}, CLASSE : {etudiant[5]}")
         else:
            print("Aucun étudiant trouvé.")
+    
+    def get_student_id_from_user_id(user_id):
+        pass
 
     # ==========================================
     # GESTION DES PROFESSEURS
@@ -95,7 +98,7 @@ class Gestion_utisateurs:
        password = input("Mot de passe du professeur : ")
        
        self.teachers.Ajouter(nom,prenom,classe,subject_id)
-       self.users.Ajouter(nom,prenom,password,user_name,"professeur")
+       self.users.Ajouter(nom, prenom, "professeur", user_name, password)
        print(f"Le professeur {nom} {prenom} a été ajouté avec succès.")
 
 
@@ -135,11 +138,12 @@ class Gestion_utisateurs:
 
         id_prof = int(input("Entrez l'ID du professeur recherché : "))
         resultat = self.teachers.rechercher(id_prof)
+        
         if resultat:
-           for proffesseur in resultat:
-            print(f"ID : {proffesseur[0]}, NOM : {proffesseur[1]}, PRÉNOM : {proffesseur[2]}, MATIÈRE : {proffesseur[3]}, CLASSE : {proffesseur[4]}")
+            # On retire la boucle for et on utilise directement 'resultat'
+            print(f"ID : {resultat[0]}, NOM : {resultat[1]}, PRÉNOM : {resultat[2]}, MATIÈRE : {resultat[3]}, CLASSE : {resultat[4]}")
         else:
-           print("Aucun proffesseur trouvé.")
+            print("Aucun professeur trouvé.")
 
 
     # ==========================================

@@ -116,3 +116,94 @@
 2026-42-30 15:42:35 - INFO - Connexion réussie pour l'utilisateur : bamba (Rôle : 1111)
 2026-48-30 15:48:05 - INFO - DEMARAGE DE L'APPLICATION
 2026-48-30 15:48:20 - INFO - Connexion réussie pour l'utilisateur : bamba (Rôle : 1111)
+2026-58-30 15:58:10 - INFO - DEMARAGE DE L'APPLICATION
+2026-59-30 15:59:42 - INFO - DEMARAGE DE L'APPLICATION
+2026-59-30 15:59:53 - INFO - Connexion réussie pour l'utilisateur : nour (Rôle : 123)
+2026-01-30 16:01:34 - INFO - DEMARAGE DE L'APPLICATION
+2026-01-30 16:01:43 - WARNING - Tentative de connexion échouée pour le nom d'utilisateur : 'bamba'
+2026-01-30 16:01:56 - INFO - Connexion réussie pour l'utilisateur : bamba (Rôle : 1111)
+2026-02-30 16:02:24 - INFO - DEMARAGE DE L'APPLICATION
+2026-02-30 16:02:48 - INFO - Connexion réussie pour l'utilisateur : bamba (Rôle : 1111)
+2026-05-30 16:05:33 - INFO - DEMARAGE DE L'APPLICATION
+2026-05-30 16:05:49 - INFO - Connexion réussie pour l'utilisateur : bamba (Rôle : 1111)
+2026-08-30 16:08:04 - INFO - DEMARAGE DE L'APPLICATION
+2026-08-30 16:08:32 - INFO - Connexion réussie pour l'utilisateur : nour (Rôle : 123)
+2026-19-30 16:19:33 - INFO - DEMARAGE DE L'APPLICATION
+2026-19-30 16:19:57 - INFO - Connexion réussie pour l'utilisateur : nour (Rôle : 123)
+2026-26-30 16:26:59 - INFO - DEMARAGE DE L'APPLICATION
+2026-27-30 16:27:12 - INFO - Connexion réussie pour l'utilisateur : bamba (Rôle : 1111)
+2026-35-30 16:35:54 - INFO - DEMARAGE DE L'APPLICATION
+2026-36-30 16:36:01 - INFO - Connexion réussie pour l'utilisateur : bamba (Rôle : 1111)
+2026-38-30 16:38:06 - INFO - DEMARAGE DE L'APPLICATION
+2026-38-30 16:38:16 - INFO - Connexion réussie pour l'utilisateur : nour (Rôle : 123)
+2026-42-30 16:42:29 - INFO - DEMARAGE DE L'APPLICATION
+2026-42-30 16:42:37 - INFO - Connexion réussie pour l'utilisateur : nour (Rôle : 123)
+2026-46-30 16:46:11 - INFO - DEMARAGE DE L'APPLICATION
+2026-46-30 16:46:32 - INFO - Connexion réussie pour l'utilisateur : awa (Rôle : 123)
+2026-46-30 16:46:32 - INFO - Session ouverte pour l'étudiant ID : 7
+2026-47-30 16:47:24 - INFO - DEMARAGE DE L'APPLICATION
+2026-47-30 16:47:32 - INFO - Connexion réussie pour l'utilisateur : awa (Rôle : 123)
+2026-47-30 16:47:32 - INFO - Session ouverte pour l'étudiant ID : 7
+2026-57-30 16:57:25 - INFO - DEMARAGE DE L'APPLICATION
+2026-57-30 16:57:35 - INFO - Connexion réussie pour l'utilisateur : awa (Rôle : 123)
+2026-57-30 16:57:35 - INFO - Session ouverte pour l'étudiant ID : 7
+2026-57-30 16:57:51 - WARNING - Tentative de choix invalide dans le menu par l'étudiant ID 7 : 'def rechercher(self, id_user):'
+2026-57-30 16:57:51 - WARNING - Tentative de choix invalide dans le menu par l'étudiant ID 7 : '        self.curseur.execute("SELECT * FROM users WHERE id = ?", (id_user,))'
+2026-57-30 16:57:51 - WARNING - Tentative de choix invalide dans le menu par l'étudiant ID 7 : '        # fetchone() est crucial ici'
+2026-57-30 16:57:57 - WARNING - Tentative de choix invalide dans le menu par l'étudiant ID 7 : '        return self.curseur.fetchone()1'
+2026-03-30 17:03:13 - INFO - L'utilisateur a quitté l'application via le sous-menu.
+2026-03-30 17:03:16 - INFO - DEMARAGE DE L'APPLICATION
+2026-03-30 17:03:29 - INFO - Connexion réussie pour l'utilisateur : nour (Rôle : 123)
+2026-03-30 17:03:55 - INFO - DEMARAGE DE L'APPLICATION
+2026-04-30 17:04:09 - INFO - Connexion réussie pour l'utilisateur : nour (Rôle : 123)
+2026-06-30 17:06:25 - INFO - DEMARAGE DE L'APPLICATION
+2026-06-30 17:06:35 - INFO - Connexion réussie pour l'utilisateur : zebi (Rôle : 123)
+2026-06-30 17:06:35 - INFO - Session ouverte pour l'étudiant ID : 2
+2026-06-30 17:06:40 - INFO - L'étudiant ID 2 s'est déconnecté volontairement.
+2026-07-30 17:07:06 - INFO - DEMARAGE DE L'APPLICATION
+2026-07-30 17:07:11 - INFO - Connexion réussie pour l'utilisateur : ange (Rôle : 123)
+2026-08-30 17:08:37 - INFO - DEMARAGE DE L'APPLICATION
+2026-08-30 17:08:41 - INFO - Connexion réussie pour l'utilisateur : gael (Rôle : gael)
+2026-08-30 17:08:41 - INFO - Session ouverte pour l'étudiant ID : 10
+2026-17-30 17:17:05 - INFO - DEMARAGE DE L'APPLICATION
+2026-17-30 17:17:11 - INFO - Connexion réussie pour l'utilisateur : gael (Rôle : gael)
+2026-17-30 17:17:11 - INFO - Session ouverte pour l'étudiant ID : 20
+2026-17-30 17:17:29 - INFO - DEMARAGE DE L'APPLICATION
+2026-17-30 17:17:34 - INFO - Connexion réussie pour l'utilisateur : ange (Rôle : 123)
+2026-18-30 17:18:16 - INFO - DEMARAGE DE L'APPLICATION
+2026-18-30 17:18:21 - INFO - Connexion réussie pour l'utilisateur : gael (Rôle : gael)
+2026-18-30 17:18:21 - INFO - Session ouverte pour l'étudiant ID : 20
+2026-20-30 17:20:26 - INFO - DEMARAGE DE L'APPLICATION
+2026-20-30 17:20:34 - INFO - Connexion réussie pour l'utilisateur : gael (Rôle : gael)
+2026-20-30 17:20:34 - INFO - Session ouverte pour l'étudiant ID : 20
+2026-23-30 17:23:38 - INFO - L'utilisateur a quitté l'application via le sous-menu.
+2026-23-30 17:23:39 - INFO - DEMARAGE DE L'APPLICATION
+2026-23-30 17:23:46 - INFO - Connexion réussie pour l'utilisateur : gael (Rôle : gael)
+2026-25-30 17:25:30 - INFO - DEMARAGE DE L'APPLICATION
+2026-25-30 17:25:35 - INFO - Connexion réussie pour l'utilisateur : gael (Rôle : gael)
+2026-25-30 17:25:35 - INFO - Session ouverte pour l'étudiant ID : 20
+2026-25-30 17:25:46 - INFO - L'utilisateur a quitté l'application via le sous-menu.
+2026-26-30 17:26:08 - INFO - DEMARAGE DE L'APPLICATION
+2026-26-30 17:26:13 - INFO - Connexion réussie pour l'utilisateur : gael (Rôle : gael)
+2026-26-30 17:26:13 - INFO - Session ouverte pour l'étudiant ID : 20
+2026-26-30 17:26:15 - INFO - L'étudiant ID 20 a consulté sa moyenne générale.
+2026-27-30 17:27:53 - INFO - DEMARAGE DE L'APPLICATION
+2026-28-30 17:28:04 - INFO - Connexion réussie pour l'utilisateur : gael (Rôle : gael)
+2026-28-30 17:28:04 - INFO - Session ouverte pour l'étudiant ID : 20
+2026-28-30 17:28:18 - INFO - DEMARAGE DE L'APPLICATION
+2026-28-30 17:28:23 - INFO - Connexion réussie pour l'utilisateur : gael (Rôle : gael)
+2026-28-30 17:28:23 - INFO - Session ouverte pour l'étudiant ID : 20
+2026-28-30 17:28:25 - INFO - L'étudiant ID 20 a consulté ses absences.
+2026-28-30 17:28:30 - INFO - L'utilisateur a quitté l'application via le sous-menu.
+2026-28-30 17:28:32 - INFO - DEMARAGE DE L'APPLICATION
+2026-28-30 17:28:36 - INFO - Connexion réussie pour l'utilisateur : ange (Rôle : 123)
+2026-29-30 17:29:10 - INFO - DEMARAGE DE L'APPLICATION
+2026-29-30 17:29:15 - INFO - Connexion réussie pour l'utilisateur : gael (Rôle : gael)
+2026-29-30 17:29:15 - INFO - Session ouverte pour l'étudiant ID : 20
+2026-29-30 17:29:20 - INFO - L'étudiant ID 20 a consulté ses absences.
+2026-30-30 17:30:28 - INFO - L'utilisateur a quitté l'application via le sous-menu.
+2026-30-30 17:30:29 - INFO - DEMARAGE DE L'APPLICATION
+2026-30-30 17:30:34 - INFO - Connexion réussie pour l'utilisateur : gael (Rôle : gael)
+2026-30-30 17:30:34 - INFO - Session ouverte pour l'étudiant ID : 20
+2026-30-30 17:30:37 - INFO - L'étudiant ID 20 a consulté ses absences.
+2026-30-30 17:30:43 - INFO - L'utilisateur a quitté l'application via le sous-menu.

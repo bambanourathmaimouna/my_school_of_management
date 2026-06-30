@@ -5,6 +5,8 @@ from utils.util_student import gestion_student
 from utils.logger import logging
 from database.bd import ManageBD
 from models.users import userModel
+from models.student import EtudiantModel
+
 def main():
 
     auto = option_user()
@@ -20,8 +22,10 @@ def main():
             gestion_teacher()
 
         elif role == "étudiant":
-            id_etudiant = auto[0]
-            gestion_student(id_etudiant)
+
+            etudiant = EtudiantModel()
+            id_etudiant = etudiant.get_student_id_from_user_id(auto[0])
+            gestion_student(id_etudiant[0])
     else:
         print("Rôle non reconnu")
 

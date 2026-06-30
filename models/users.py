@@ -10,7 +10,9 @@ class userModel(ManageBD):
             INSERT INTO users(nom, prenom, role, user_name, password)
             VALUES (?, ?, ?, ?, ?)
         """, (nom, prenom, role, user_name, password))
+        lastid = self.curseur.lastrowid
         self.conexion.commit()
+        return lastid
 
     def Lire(self):
         self.curseur.execute("SELECT * FROM users")
@@ -31,7 +33,7 @@ class userModel(ManageBD):
     def rechercher(self, id_users):
        
         self.curseur.execute("SELECT * FROM users WHERE id = ?", (id_users,))
-        return self.curseur.fetchall()
+        return self.curseur.fetchone()
 
 
     def supprimer(self,id_users):

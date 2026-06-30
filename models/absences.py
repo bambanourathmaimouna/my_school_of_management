@@ -19,6 +19,10 @@ class AbsenceModel(ManageBD):
     def Lire(self):
         self.curseur.execute("SELECT * FROM absences")
         return self.curseur.fetchall()
+    
+    def lire_par_etudiant(self, student_id):
+        self.curseur.execute("SELECT * FROM absences WHERE student_id = ?", (student_id,))
+        return self.curseur.fetchall()
 
 
     def Modifier(self, id_absence, student_id, date, status):

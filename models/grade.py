@@ -23,7 +23,7 @@ class gradeModel(ManageBD):
         """Récupère explicitement la colonne 'note' pour l'étudiant donné"""
         self.curseur.execute(
             """
-            SELECT note FROM grades 
+            SELECT * FROM grades 
             WHERE student_id = ?
             """, 
             (int(student_id),))

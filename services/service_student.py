@@ -51,7 +51,7 @@ class Gestion_student:
         print("\n--- MES ABSENCES ---")
         if absences:
             for absence in absences:
-                print(f"Date : {absence[0]} | Statut : {absence[1]}")
+                print(f"Date : {absence[2]} | Statut : {absence[3]}")
         else:
             print("Aucune absence enregistrée. Félicitations !")
            
