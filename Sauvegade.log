@@ -289,3 +289,23 @@
 2026-16-01 12:16:42 - INFO - DEMARAGE DE L'APPLICATION
 2026-16-01 12:16:47 - WARNING - Option invalide saisie dans le menu de connexion : '2'
 2026-17-01 12:17:22 - INFO - DEMARAGE DE L'APPLICATION
+2026-07-01 14:07:28 - INFO - DEMARAGE DE L'APPLICATION
+2026-44-01 14:44:43 - INFO - DEMARAGE DE L'APPLICATION
+2026-56-01 14:56:51 - INFO - DEMARAGE DE L'APPLICATION
+2026-57-01 14:57:21 - INFO - Connexion réussie pour l'utilisateur : nour (Rôle : admin)
+2026-58-01 14:58:29 - INFO - DEMARAGE DE L'APPLICATION
+2026-58-01 14:58:46 - INFO - Connexion réussie pour l'utilisateur : lale (Rôle : étudiant)
+2026-58-01 14:58:46 - INFO - Session ouverte pour l'étudiant ID : 23
+2026-00-01 15:00:27 - INFO - DEMARAGE DE L'APPLICATION
+2026-00-01 15:00:33 - INFO - DEMARAGE DE L'APPLICATION
+2026-47-01 15:47:10 - INFO - DEMARAGE DE L'APPLICATION
+2026-03-01 16:03:08 - INFO - DEMARAGE DE L'APPLICATION
+2026-03-01 16:03:22 - INFO - Connexion réussie pour l'utilisateur : ange (Rôle : professeur)
+2026-09-01 16:09:53 - INFO - DEMARAGE DE L'APPLICATION
+2026-10-01 16:10:01 - INFO - Connexion réussie pour l'utilisateur : ange (Rôle : professeur)
+2026-13-01 16:13:54 - INFO - DEMARAGE DE L'APPLICATION
+2026-14-01 16:14:06 - INFO - Connexion réussie pour l'utilisateur : ange (Rôle : professeur)
+2026-16-01 16:16:35 - INFO - DEMARAGE DE L'APPLICATION
+2026-16-01 16:16:46 - INFO - Connexion réussie pour l'utilisateur : ange (Rôle : professeur)
+2026-20-01 16:20:48 - INFO - Suppression complète de la note 21.
+2026-20-01 16:20:57 - INFO - Suppression complète de la note 22.

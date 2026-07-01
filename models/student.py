@@ -50,7 +50,7 @@ class EtudiantModel(ManageBD):
 
     def existe(self, id_etudiant):
         self.curseur.execute(
-        "SELECT 1 FROM students WHERE id = ?",
+        "SELECT * FROM students WHERE id = ?",
         (id_etudiant,))
         return self.curseur.fetchall() is not None
     

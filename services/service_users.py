@@ -140,7 +140,6 @@ class Gestion_utisateurs:
         resultat = self.teachers.rechercher(id_prof)
         
         if resultat:
-            # On retire la boucle for et on utilise directement 'resultat'
             print(f"ID : {resultat[0]}, NOM : {resultat[1]}, PRÉNOM : {resultat[2]}, MATIÈRE : {resultat[3]}, CLASSE : {resultat[4]}")
         else:
             print("Aucun professeur trouvé.")
@@ -156,7 +155,6 @@ class Gestion_utisateurs:
         nom = input("Veuillez renseigner le nom de l'utilisateur : ")
         prenom = input("Veuillez renseigner le prénom de l'utilisateur : ")
         
-        # Ajout de .strip().lower() pour forcer le format parfait
         role = input("Veuillez renseigner le rôle (admin/professeur/étudiant) : ").strip().lower()
         
         user_name = input("Définir un nom d'utilisateur (user_name) pour le professeur  : ")
