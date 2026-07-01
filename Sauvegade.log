@@ -284,3 +284,8 @@
 2026-47-01 11:47:00 - INFO - Suppression complète de la note 19.
 2026-55-01 11:55:42 - INFO - DEMARAGE DE L'APPLICATION
 2026-56-01 11:56:18 - INFO - Connexion réussie pour l'utilisateur : nour (Rôle : admin)
+2026-14-01 12:14:32 - INFO - DEMARAGE DE L'APPLICATION
+2026-15-01 12:15:00 - INFO - Connexion réussie pour l'utilisateur : nour (Rôle : admin)
+2026-16-01 12:16:42 - INFO - DEMARAGE DE L'APPLICATION
+2026-16-01 12:16:47 - WARNING - Option invalide saisie dans le menu de connexion : '2'
+2026-17-01 12:17:22 - INFO - DEMARAGE DE L'APPLICATION

@@ -54,3 +54,9 @@ class SubjectModel(ManageBD):
         """Supprime absolument TOUTES les notes de la table subjects"""
         self.curseur.execute("DELETE FROM subjects")
         self.conexion.commit()
+
+
+
+    def close(self):
+        self.conexion.close()
+    
