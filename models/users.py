@@ -52,36 +52,10 @@ class userModel(ManageBD):
 
     
 
-    
-    def supprimer_toutes_les_notes(self):
-        """Supprime absolument TOUTES les notes de la table users"""
-        self.curseur.execute("DELETE FROM users")
-        self.conexion.commit()
-
-    def ajouter_colonne(self):
-        try:
-            # 1. On ajoute la colonne sans la contrainte UNIQUE directe
-            self.curseur.execute("ALTER TABLE students ADD COLUMN user_name TEXT;")
-            
-            # 2. On crée l'index unique pour appliquer la contrainte d'unicité
-            self.curseur.execute("CREATE UNIQUE INDEX IF NOT EXISTS idx_students_user_name ON students (user_name);")
-            
-            # 3. On valide les changements
-            self.conexion.commit()
-            print("Colonne 'user_name' et son index unique ajoutés avec succès.")
-            
-        except sqlite3.OperationalError as e:
-            # Au cas où la colonne existe déjà si vous relancez le script
-            if "duplicate column name" in str(e):
-                print("La colonne 'user_name' existe déjà.")
-            else:
-                raise e
-
 
     def drop_users(self):
         try:
             self.curseur.execute("DROP TABLE IF EXISTS users;")
-            # On utilise 'conexion' ici aussi
             self.conexion.commit()
             print("La table 'users' a été supprimée avec succès.")
         except Exception as e:

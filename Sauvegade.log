@@ -270,3 +270,15 @@
 2026-19-01 11:19:31 - INFO - Connexion réussie pour l'utilisateur : nour (Rôle : admin)
 2026-21-01 11:21:13 - INFO - DEMARAGE DE L'APPLICATION
 2026-21-01 11:21:27 - INFO - Connexion réussie pour l'utilisateur : nour (Rôle : admin)
+2026-41-01 11:41:03 - INFO - DEMARAGE DE L'APPLICATION
+2026-41-01 11:41:14 - INFO - Connexion réussie pour l'utilisateur : nour (Rôle : admin)
+2026-43-01 11:43:54 - INFO - DEMARAGE DE L'APPLICATION
+2026-44-01 11:44:02 - INFO - Connexion réussie pour l'utilisateur : nour (Rôle : admin)
+2026-44-01 11:44:28 - INFO - DEMARAGE DE L'APPLICATION
+2026-44-01 11:44:37 - INFO - Connexion réussie pour l'utilisateur : ange (Rôle : professeur)
+2026-45-01 11:45:10 - INFO - Suppression complète de la note 17.
+2026-46-01 11:46:00 - WARNING - Tentative de suppression de note invalide.
+2026-46-01 11:46:18 - INFO - Suppression complète de la note 16.
+2026-46-01 11:46:30 - WARNING - Tentative de suppression de note invalide.
+2026-46-01 11:46:50 - INFO - Suppression complète de la note 18.
+2026-47-01 11:47:00 - INFO - Suppression complète de la note 19.

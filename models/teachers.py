@@ -59,10 +59,6 @@ class teacherModel(ManageBD):
         return self.curseur.fetchone()
 
 
-    def supprimer_toutes_les_notes(self):
-        """Supprime absolument TOUTES les notes de la table teachers"""
-        self.curseur.execute("DELETE FROM teachers")
-        self.conexion.commit()
 
 
     def close(self):
