@@ -46,7 +46,7 @@ def gestion_teacher():
             retour_ou_quitter()
 
         elif choix == "8":
-            teacher.supprimer_notes_etudiant()
+            teacher.supprimer_note_etudiant()
             retour_ou_quitter()
     
         
@@ -65,5 +65,5 @@ def retour_ou_quitter():
     choix = input("\nVotre choix : ")
 
     if choix == "0":
-        print("Au revoir !")
+        print("AU REVOIR,À BIENTOT !")
         sys.exit()

@@ -4,6 +4,7 @@ from config.constants import (
     GESTION_DES_ABSENCES, MENU_connect,OPTION_PRINCIPALE
 )
 from services.service_users import Gestion_utisateurs
+from utils.logger import logging
 import sys
 
 
@@ -164,7 +165,8 @@ def retour_ou_quitter():
     choix = input("\nVotre choix : ")
 
     if choix == "0":
-        print("Au revoir !")
+        logging.info("L'utilisateur a quitté l'application via le sous-menu.")
+        print("AU REVOIR,À BIENTOT !")
         sys.exit()
 
 

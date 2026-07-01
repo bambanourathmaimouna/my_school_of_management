@@ -100,12 +100,18 @@ class Gestion_teachers:
     # -----------------------------
     # 8. supprimer_notes_etudiant
     # -----------------------------
-    def supprimer_notes_etudiant(self):
-        student_id = input("Entrez l'ID de l'étudiant pour supprimer  ses notes : ")
-        if student_id.isdigit():
-            self.grades.supprimer_note(student_id)
-            print(f"Les notes de l'étudiant ID {student_id} ont été supprimées avec succès.")
-            logging.info(f"Suppression complète des notes effectuée pour l'étudiant ID {student_id}.")
+
+    def supprimer_note_etudiant(self):
+        note_id = input("Entrez l'ID de la note à supprimer : ")
+
+        if note_id.isdigit():
+            self.grades.supprimer_note(note_id)
+            print("Note supprimée avec succès.")
+            logging.info(f"Suppression complète de la note {note_id}.")
         else:
-            print("ID invalide,l'id n'existe pas.")
-            logging.warning(f"Tentative de suppression de notes avec un ID invalide : '{student_id}'")
+            print("ID invalide.")
+            logging.warning(f"Tentative de suppression de note invalide.")
+
+
+
+    

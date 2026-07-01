@@ -11,7 +11,7 @@ def retour_ou_quitter():
     choix = input("\nVotre choix : ")
     if choix == "0":
         logging.info("L'utilisateur a quitté l'application via le sous-menu.")
-        print("Au revoir !")
+        print("AU REVOIR,À BIENTOT !")
         sys.exit()
 
 

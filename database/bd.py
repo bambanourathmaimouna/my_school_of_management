@@ -95,7 +95,7 @@ class ManageBD:
         """)
         self.conexion.commit()
 
-    # Correction B : Syntaxe corrigée pour réellement DROP la table si demandé
+
     def suprimer_table(self):
         try:
             self.curseur.execute("DROP TABLE IF EXISTS teachers;")

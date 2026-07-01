@@ -11,16 +11,16 @@ class gradeModel(ManageBD):
             INSERT INTO grades (student_id, subject_id, note)
             VALUES (?, ?, ?)
             """,
-            (int(student_id), int(subject_id), float(note))
-        )
+            (int(student_id), int(subject_id), float(note)))
         self.conexion.commit()
+
 
     def Lire(self):
         self.curseur.execute("SELECT * FROM grades")
         return self.curseur.fetchall()
+    
 
     def lire_par_etudiant(self, student_id):
-        """Récupère explicitement la colonne 'note' pour l'étudiant donné"""
         self.curseur.execute(
             """
             SELECT * FROM grades 
@@ -28,6 +28,7 @@ class gradeModel(ManageBD):
             """, 
             (int(student_id),))
         return self.curseur.fetchall()
+    
 
     def moyenne_par_etudiant(self, student_id):
         self.curseur.execute(
@@ -36,9 +37,9 @@ class gradeModel(ManageBD):
             FROM grades
             WHERE student_id = ?
             """,
-            (int(student_id),)
-        )
+            (int(student_id),))
         return self.curseur.fetchone()
+    
 
     def Modifier(self, id_note, note):
         self.curseur.execute(
@@ -47,9 +48,9 @@ class gradeModel(ManageBD):
             SET note = ?
             WHERE id = ?
             """, 
-            (float(note), int(id_note))
-        )
+            (float(note), int(id_note)))
         self.conexion.commit()
+
     
     def supprimer(self, id_note):
         self.curseur.execute(
@@ -57,9 +58,9 @@ class gradeModel(ManageBD):
             DELETE FROM grades
             WHERE id = ?
             """,
-            (int(id_note),)
-        )
+            (int(id_note),))
         self.conexion.commit()
+
 
     def rechercher(self, id_note):
         self.curseur.execute(
@@ -67,29 +68,17 @@ class gradeModel(ManageBD):
             SELECT * FROM grades
             WHERE id = ?
             """,
-            (int(id_note),)
-        )
+            (int(id_note),))
         return self.curseur.fetchall()
+    
 
-    def supprimer_note(self, student_id):
-        """Supprime toutes les notes associées à un étudiant spécifique"""
+    def supprimer_note(self, note_id):
         self.curseur.execute(
-            """
-            DELETE FROM grades
-            WHERE student_id = ?
-            """,
-            (int(student_id),)
+            "DELETE FROM grades WHERE id = ?",
+            (note_id,)
         )
         self.conexion.commit()
         
-      
-    def supprimer_toutes_les_notes(self):
-        """Supprime absolument TOUTES les notes de la table grades"""
-        self.curseur.execute("DELETE FROM grades")
-        self.conexion.commit()
-        
-
-
 
     def close(self):
         self.conexion.close()

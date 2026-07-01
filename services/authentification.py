@@ -26,7 +26,7 @@ def option_user():
                 # Attention aux indices : selon votre base de données, 
                 # vérifiez si nom et rôle sont bien aux positions 4 et 5 de votre tuple.
                 nom_users = compte[4]
-                role_users = compte[5]
+                role_users = compte[3]
 
                 print(f"\nBienvenue sur votre espace {nom_users} ({role_users})")
                 

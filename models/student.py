@@ -53,6 +53,7 @@ class EtudiantModel(ManageBD):
         "SELECT 1 FROM students WHERE id = ?",
         (id_etudiant,))
         return self.curseur.fetchall() is not None
+    
 
     def get_student_id_from_user_id(self, user_id):
         self.curseur.execute(

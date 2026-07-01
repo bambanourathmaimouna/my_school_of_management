@@ -14,14 +14,11 @@ class Gestion_student:
     # CONSULTER MES NOTES
     # ==========================
     def consulter_mes_notes(self, student_id):
-        
-        print("DEBUG ID :", student_id)
 
+        print("Id de l'étudiant :", student_id)
         notes = self.grades.lire_par_etudiant(int(student_id))
-
-        print("DEBUG NOTES RAW :", notes)
-
         print("\n--- MES NOTES ---")
+        
         if notes:
             for note in notes:
                 print(f"ID_MATIÈRE : {note[2]}, Note : {note[3]}/20")

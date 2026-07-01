@@ -24,7 +24,7 @@ class Gestion_utisateurs:
         nom = input("Veuillez renseigner le nom de l'étudiant : ")
         prenom = input("Veuillez renseigner le prénom de l'étudiant : ")
         age = int(input("Merci d'indiquer l'âge de l'étudiant : "))
-        matricule = float(input("Saisissez le matricule : "))
+        matricule = (input("Saisissez le matricule : "))
         classe = input("Merci d'indiquer le niveau de l'étudiant : ")
       
         user_name = input("Définir un nom d'utilisateur (user_name) pour l'étudiant : ")
